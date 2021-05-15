@@ -1,4 +1,3 @@
-
 class InsuranceModel {
   String company;
   KeyValues keyValues;
@@ -71,21 +70,24 @@ class KeyValues {
 }
 
 class Template {
-  String name;
+  String firstname;
+  String lastname;
   String policy;
   String validFrom;
 
-  Template({this.name, this.policy, this.validFrom});
+  Template({this.firstname, this.lastname, this.policy, this.validFrom});
 
   Template.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
+    firstname = json['firstname'];
+    lastname = json['lastname'];
     policy = json['policy'];
     validFrom = json['valid_from'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
+    data['firstname'] = this.firstname;
+    data['lastname'] = this.lastname;
     data['policy'] = this.policy;
     data['valid_from'] = this.validFrom;
     return data;
